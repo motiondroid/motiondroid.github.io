@@ -1,6 +1,6 @@
 # MotionDroid — Video Editor Portfolio
 
-Live site: https://motiondroid.github.io/My-Portfolio/
+Live site: https://motiondroid.github.io
 
 ## Files
 
@@ -17,6 +17,8 @@ Saari files ek hi jagah (root) par hain — koi folder nahi, isliye upload karna
 | `favicon.png` | Browser tab ka icon |
 | `showreel.mp4` | Showreel video |
 | `showreel-thumbnail.jpg` | Showreel ka thumbnail |
+| `work-*.mp4` | Recent work ke 4 videos |
+| `thumb-*.jpg` | Recent work cards ke thumbnails |
 | `.nojekyll` | GitHub ko files ko bina badle serve karne deta hai (delete mat karna) |
 
 ## Kuch badalna ho to
@@ -25,6 +27,7 @@ Saari files ek hi jagah (root) par hain — koi folder nahi, isliye upload karna
 |---|---|
 | Text, prices, email, phone, links | `index.html` (GitHub par file kholo → ✏️ pencil icon → edit → Commit) |
 | Colors | `style.css` → sabse upar `:root { --accent: #FF6A3D; ... }` |
+| Recent work ka title/description | `index.html` mein `id="work"` section |
 | Photo / video / thumbnail | Nayi file **same naam** se upload karo — purani apne-aap replace ho jaayegi |
 
 ## Rules
