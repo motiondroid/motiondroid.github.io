@@ -70,7 +70,7 @@
   }
 
   // Scroll reveal (fade + slide up)
-  var revealEls = document.querySelectorAll('.reveal, .section-head');
+  var revealEls = document.querySelectorAll('.reveal, .section-head, .steps');
   function show(el) {
     el.classList.add('in');
     if (el.id === 'scrubber') startPlayhead();
@@ -158,4 +158,62 @@
   }
   modal.querySelectorAll('[data-close]').forEach(function (b) { b.addEventListener('click', close); });
   document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && modal.classList.contains('open')) close(); });
+})();
+
+// ---------- Intro loader ----------
+(function () {
+  var d = document.documentElement, loader = document.getElementById('loader');
+  if (!loader || !d.classList.contains('js-loading')) return;
+  var tc = document.getElementById('ldTc'), t0 = performance.now();
+  function pad(n) { return (n < 10 ? '0' : '') + n; }
+  (function tick(t) {
+    var f = Math.floor((t - t0) / (1000 / 30));
+    tc.textContent = '00:00:' + pad(Math.floor(f / 30)) + ':' + pad(f % 30);
+    if (d.classList.contains('js-loading')) requestAnimationFrame(tick);
+  })(t0);
+  setTimeout(function () {
+    loader.classList.add('ld-out');
+    d.classList.remove('js-loading');
+    setTimeout(function () { loader.remove(); }, 800);
+  }, 1600);
+})();
+
+// ---------- Pricing buttons pre-select the project type ----------
+document.querySelectorAll('.plan-cta').forEach(function (b) {
+  b.addEventListener('click', function () {
+    var sel = document.getElementById('fType');
+    if (sel) sel.value = b.dataset.plan;
+  });
+});
+
+// ---------- Contact form (FormSubmit) ----------
+(function () {
+  var form = document.getElementById('cform');
+  if (!form) return;
+  var status = document.getElementById('fStatus'), btn = form.querySelector('.f-submit'), label = btn.querySelector('.f-label');
+  var ENDPOINT = 'https://formsubmit.co/ajax/motiondroid.in@gmail.com';
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var bad = false;
+    form.querySelectorAll('[required]').forEach(function (f) {
+      var ok = f.value.trim() && (f.type !== 'email' || /\S+@\S+\.\S+/.test(f.value));
+      f.classList.toggle('invalid', !ok); if (!ok) bad = true;
+    });
+    if (bad) { status.className = 'f-status err'; status.textContent = 'Please fill in your name, a valid email and project details.'; return; }
+
+    btn.disabled = true; label.textContent = 'Sending…'; status.className = 'f-status'; status.textContent = '';
+    fetch(ENDPOINT, { method: 'POST', headers: { 'Accept': 'application/json' }, body: new FormData(form) })
+      .then(function (r) { return r.json(); })
+      .then(function (res) {
+        if (String(res.success) === 'true') {
+          status.className = 'f-status ok'; status.textContent = 'Thanks! Your brief is in — I’ll get back to you soon.'; form.reset();
+        } else { throw new Error(res.message || 'failed'); }
+      })
+      .catch(function () {
+        status.className = 'f-status err';
+        status.innerHTML = 'Couldn’t send right now. Please email <a href="mailto:motiondroid.in@gmail.com">motiondroid.in@gmail.com</a> or WhatsApp instead.';
+      })
+      .finally(function () { btn.disabled = false; label.textContent = 'Send project brief'; });
+  });
 })();

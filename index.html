@@ -3,9 +3,20 @@
 <head>
 <meta charset="UTF-8">
 <meta name="description" content="MotionDroid — video editor for YouTube creators and brands. Long-form edits, Shorts/Reels, color grading and motion graphics. Based in Palghar, Maharashtra.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://motiondroid.github.io/">
+<meta property="og:site_name" content="MotionDroid">
 <meta property="og:title" content="MotionDroid — Video Editor">
-<meta property="og:description" content="I cut long footage down to the part people actually watch.">
-<meta property="og:image" content="showreel-thumbnail.jpg">
+<meta property="og:description" content="YouTube videos, Shorts & Reels edited for retention — pacing, sound, captions and motion graphics.">
+<meta property="og:image" content="https://motiondroid.github.io/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="MotionDroid — Video Editor">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="MotionDroid — Video Editor">
+<meta name="twitter:description" content="YouTube videos, Shorts & Reels edited for retention.">
+<meta name="twitter:image" content="https://motiondroid.github.io/og-image.jpg">
+<link rel="canonical" href="https://motiondroid.github.io/">
 <meta name="theme-color" content="#0E1013">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>MotionDroid — Video Editor</title>
@@ -14,9 +25,28 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
+<script>
+  /* intro loader: once per visit, skipped for reduced motion; auto-removed after 4s as a safety net */
+  (function () {
+    var d = document.documentElement;
+    try {
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches || sessionStorage.getItem('mdIntro')) return;
+      sessionStorage.setItem('mdIntro', '1');
+    } catch (e) {}
+    d.classList.add('js-loading');
+    setTimeout(function () { d.classList.remove('js-loading'); }, 4000);
+  })();
+</script>
 </head>
 <body>
 <div id="css-check" style="background:#b00020;color:#fff;padding:14px;font:16px sans-serif;text-align:center">⚠ style.css load nahi hui — check karo ki style.css repo ke main page par index.html ke saath hai (kisi folder ke andar nahi).</div>
+
+<div id="loader" aria-hidden="true">
+  <div class="ld-logo"><img src="logo-mark.png" alt=""><span class="ld-sweep"></span></div>
+  <div class="ld-name">MOTIONDROID</div>
+  <div class="ld-bar"><i></i></div>
+  <div class="ld-tc mono" id="ldTc">00:00:00:00</div>
+</div>
 
 <div class="progress" id="progress"></div>
 
@@ -26,9 +56,10 @@
     <nav class="tc-nav">
       <a href="#work"><span class="tc">00:01</span>WORK</a>
       <a href="#services"><span class="tc">00:02</span>SERVICES</a>
-      <a href="#about"><span class="tc">00:03</span>ABOUT</a>
-      <a href="#clients"><span class="tc">00:04</span>CLIENTS</a>
-      <a href="#contact"><span class="tc">00:05</span>CONTACT</a>
+      <a href="#process"><span class="tc">00:03</span>PROCESS</a>
+      <a href="#pricing"><span class="tc">00:04</span>PRICING</a>
+      <a href="#about"><span class="tc">00:05</span>ABOUT</a>
+      <a href="#contact"><span class="tc">00:06</span>CONTACT</a>
     </nav>
   </div>
 </header>
@@ -181,30 +212,111 @@
       <div class="service-row reveal" style="--d:0ms">
         <span class="tc">01</span>
         <div><h3>Long-form YouTube edit</h3><p>Full edit from raw footage — cuts, pacing, captions, sound cleanup.</p></div>
-        <span class="price">from ₹2,500 / video</span>
+        <span class="price">16:9 · YouTube</span>
       </div>
       <div class="service-row reveal" style="--d:100ms">
         <span class="tc">02</span>
         <div><h3>Shorts &amp; Reels cutdown</h3><p>Turn one long video into several vertical clips built to hook fast.</p></div>
-        <span class="price">from ₹1,000 / clip</span>
+        <span class="price">9:16 · Reels</span>
       </div>
       <div class="service-row reveal" style="--d:200ms">
         <span class="tc">03</span>
         <div><h3>Color grade + sound pass</h3><p>A consistent look and clean audio applied across an existing edit.</p></div>
-        <span class="price">from ₹1,500 / video</span>
+        <span class="price">Look + audio</span>
       </div>
       <div class="service-row reveal" style="--d:300ms">
         <span class="tc">04</span>
         <div><h3>Ongoing channel editor</h3><p>Weekly or monthly edits for a channel that publishes on a schedule.</p></div>
-        <span class="price">from ₹15,000 / month</span>
+        <span class="price">Retainer</span>
       </div>
     </div>
   </div>
 </section>
 
+<section id="process">
+  <div class="wrap">
+    <div class="section-head reveal"><span class="tc mono">00:03</span><h2>How I work</h2><span class="rule"></span></div>
+    <p class="section-lede reveal" style="--d:100ms">A simple four-step flow — you always know what’s happening and when.</p>
+    <div class="steps" id="steps">
+      <div class="steps-track"><i></i></div>
+      <div class="step reveal" style="--d:0ms">
+        <span class="step-dot">01</span>
+        <span class="step-chip mono">DAY 0</span>
+        <h3>Brief &amp; footage</h3>
+        <p>Share the raw footage (a Drive link works), a reference video you like and your deadline. I confirm scope and price before starting.</p>
+      </div>
+      <div class="step reveal" style="--d:150ms">
+        <span class="step-dot">02</span>
+        <span class="step-chip mono">2–3 DAYS</span>
+        <h3>First cut</h3>
+        <p>I cut for story and pacing first — hook, structure, B-roll, captions, music and sound cleanup.</p>
+      </div>
+      <div class="step reveal" style="--d:300ms">
+        <span class="step-dot">03</span>
+        <span class="step-chip mono">2 ROUNDS</span>
+        <h3>Revisions</h3>
+        <p>You leave timestamped notes, I refine the cut. Two revision rounds are included.</p>
+      </div>
+      <div class="step reveal" style="--d:450ms">
+        <span class="step-dot">04</span>
+        <span class="step-chip mono">FINAL FILE</span>
+        <h3>Delivery</h3>
+        <p>Final export in the right format for YouTube, Shorts or Reels — ready to upload.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="pricing">
+  <div class="wrap">
+    <div class="section-head reveal"><span class="tc mono">00:04</span><h2>Pricing</h2><span class="rule"></span></div>
+    <p class="section-lede reveal" style="--d:100ms">Starting prices — the final quote depends on footage length and complexity.</p>
+    <div class="price-grid">
+      <div class="plan reveal" style="--d:0ms">
+        <span class="plan-name mono">SHORTS / REELS</span>
+        <div class="plan-price"><small>from</small> ₹1,000 <span>/ clip</span></div>
+        <ul>
+          <li>Up to 60-second vertical edit</li>
+          <li>Hook-first cut &amp; pacing</li>
+          <li>Animated captions</li>
+          <li>Music &amp; sound effects</li>
+          <li>1 revision round</li>
+        </ul>
+        <a class="btn btn-ghost plan-cta" href="#contact" data-plan="Shorts / Reels">Choose Reels</a>
+      </div>
+      <div class="plan featured reveal" style="--d:120ms">
+        <span class="plan-badge mono">MOST POPULAR</span>
+        <span class="plan-name mono">LONG-FORM YOUTUBE</span>
+        <div class="plan-price"><small>from</small> ₹2,500 <span>/ video</span></div>
+        <ul>
+          <li>Up to 15-minute final video</li>
+          <li>Story, pacing &amp; jump-cut cleanup</li>
+          <li>Captions, B-roll &amp; graphics</li>
+          <li>Sound cleanup + basic color</li>
+          <li>2 revision rounds</li>
+        </ul>
+        <a class="btn btn-primary plan-cta" href="#contact" data-plan="Long-form YouTube edit">Choose Long-form <span class="arr">→</span></a>
+      </div>
+      <div class="plan reveal" style="--d:240ms">
+        <span class="plan-name mono">MONTHLY CHANNEL EDITOR</span>
+        <div class="plan-price"><small>from</small> ₹15,000 <span>/ month</span></div>
+        <ul>
+          <li>4 long-form + 6 shorts / month</li>
+          <li>One consistent editing style</li>
+          <li>Priority turnaround</li>
+          <li>2 revision rounds per video</li>
+          <li>Thumbnail-ready frames</li>
+        </ul>
+        <a class="btn btn-ghost plan-cta" href="#contact" data-plan="Monthly channel editor">Choose Monthly</a>
+      </div>
+    </div>
+    <p class="addon reveal"><span class="mono">ADD-ON</span> Color grade + sound pass — from ₹1,500 / video</p>
+  </div>
+</section>
+
 <section id="about">
   <div class="wrap">
-    <div class="section-head reveal"><span class="tc mono">00:03</span><h2>About</h2><span class="rule"></span></div>
+    <div class="section-head reveal"><span class="tc mono">00:05</span><h2>About</h2><span class="rule"></span></div>
     <div class="about-grid">
       <div>
         <p class="reveal">I've spent the last two years editing and teaching editing — currently training students at a computer institute while building my own YouTube content on the side. I care most about pacing and story flow: getting a cut to feel right before anything else.</p>
@@ -263,7 +375,7 @@
 
 <section id="clients">
   <div class="wrap">
-    <div class="section-head reveal"><span class="tc mono">00:04</span><h2>Clients</h2><span class="rule"></span></div>
+    <div class="section-head reveal"><span class="tc mono">00:06</span><h2>Clients</h2><span class="rule"></span></div>
     <div class="client-grid">
       <a class="client-card reveal" href="https://www.instagram.com/unixdroid.in/" target="_blank" rel="noopener">
         <div class="client-logo mono">&gt;_</div>
@@ -280,20 +392,57 @@
 
 <section id="contact">
   <div class="wrap">
-    <div class="contact-panel reveal">
-      <div>
+    <div class="contact-panel contact-grid reveal">
+      <div class="cf-col">
         <h2>Got a video that needs an edit?</h2>
-        <p>Send the footage or the channel link — I'll reply with a quote and a timeline.</p>
-        <div class="cta-row" style="margin-top:22px">
-          <a class="btn btn-primary" href="https://wa.me/9197929910043" target="_blank" rel="noopener">WhatsApp me <span class="arr">→</span></a>
-          <a class="btn btn-ghost" href="mailto:motiondroid.in@gmail.com">Email</a>
-        </div>
+        <p>Tell me about the project — I’ll reply with a quote and a timeline, usually within 24 hours.</p>
+
+        <form class="cform" id="cform" novalidate>
+          <input type="hidden" name="_subject" value="New project enquiry — motiondroid.github.io">
+          <input type="hidden" name="_template" value="table">
+          <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off">
+          <div class="f-row">
+            <label>Name*<input name="name" required placeholder="Your name"></label>
+            <label>Email*<input name="email" type="email" required placeholder="you@email.com"></label>
+          </div>
+          <div class="f-row">
+            <label>WhatsApp<input name="whatsapp" type="tel" placeholder="Optional"></label>
+            <label>Project type
+              <select name="project_type" id="fType">
+                <option>Long-form YouTube edit</option>
+                <option>Shorts / Reels</option>
+                <option>Color grade + sound</option>
+                <option>Monthly channel editor</option>
+                <option>Something else</option>
+              </select>
+            </label>
+          </div>
+          <div class="f-row">
+            <label>Budget
+              <select name="budget">
+                <option>Under ₹2,500</option>
+                <option selected>₹2,500 – ₹10,000</option>
+                <option>₹10,000 – ₹25,000</option>
+                <option>₹25,000+</option>
+                <option>Not sure yet</option>
+              </select>
+            </label>
+            <label>Deadline<input name="deadline" type="date"></label>
+          </div>
+          <label>Project details*<textarea name="message" rows="4" required placeholder="Footage length, channel link, reference video, anything else…"></textarea></label>
+          <button class="btn btn-primary f-submit" type="submit"><span class="f-label">Send project brief</span> <span class="arr">→</span></button>
+          <p class="f-status" id="fStatus" role="status" aria-live="polite"></p>
+        </form>
       </div>
-      <div class="contact-links">
-        <a href="mailto:motiondroid.in@gmail.com">motiondroid.in@gmail.com</a>
-        <a href="tel:+9197929910043">+91 97929 910043</a>
-        <a href="https://www.instagram.com/motiondroid.in/" target="_blank" rel="noopener">Instagram ↗</a>
-        <a href="https://www.youtube.com/@motiondroid_in" target="_blank" rel="noopener">YouTube ↗</a>
+      <div class="contact-side">
+        <span class="mono side-label">OR REACH OUT DIRECTLY</span>
+        <a class="btn btn-ghost side-wa" href="https://wa.me/9197929910043" target="_blank" rel="noopener">WhatsApp me <span class="arr">→</span></a>
+        <div class="contact-links">
+          <a href="mailto:motiondroid.in@gmail.com">motiondroid.in@gmail.com</a>
+          <a href="tel:+9197929910043">+91 97929 910043</a>
+          <a href="https://www.instagram.com/motiondroid.in/" target="_blank" rel="noopener">Instagram ↗</a>
+          <a href="https://www.youtube.com/@motiondroid_in" target="_blank" rel="noopener">YouTube ↗</a>
+        </div>
       </div>
     </div>
   </div>

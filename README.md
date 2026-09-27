@@ -19,6 +19,7 @@ Saari files ek hi jagah (root) par hain — koi folder nahi, isliye upload karna
 | `showreel-thumbnail.jpg` | Showreel ka thumbnail |
 | `work-*.mp4` | Recent work ke 4 videos |
 | `thumb-*.jpg` | Recent work cards ke thumbnails |
+| `og-image.jpg` | WhatsApp/Instagram par link share karne par dikhne wali preview image |
 | `.nojekyll` | GitHub ko files ko bina badle serve karne deta hai (delete mat karna) |
 
 ## Kuch badalna ho to
@@ -27,6 +28,8 @@ Saari files ek hi jagah (root) par hain — koi folder nahi, isliye upload karna
 |---|---|
 | Text, prices, email, phone, links | `index.html` (GitHub par file kholo → ✏️ pencil icon → edit → Commit) |
 | Colors | `style.css` → sabse upar `:root { --accent: #FF6A3D; ... }` |
+| Pricing / packages | `index.html` mein `id="pricing"` section |
+| How I work steps | `index.html` mein `id="process"` section |
 | Recent work ka title/description | `index.html` mein `id="work"` section |
 | Photo / video / thumbnail | Nayi file **same naam** se upload karo — purani apne-aap replace ho jaayegi |
 
