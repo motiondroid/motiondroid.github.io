@@ -17,7 +17,9 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://motiondroid.github.io/og-image.jpg">
 <link rel="canonical" href="https://motiondroid.github.io/">
-<link rel="icon" type="image/png" href="favicon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="icon" type="image/png" sizes="64x64" href="favicon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
@@ -89,7 +91,7 @@
 
   <div class="hero-inner">
     <div class="hero-copy">
-      <div class="hero-meta mono hero-in" style="--i:0"><span class="status"><i></i>Available for projects</span><span>Palghar, India</span></div>
+      <div class="hero-meta mono hero-in" style="--i:0"><img class="hero-avatar" src="portrait.webp" alt=""><span class="status"><i></i>Available for projects</span><span>Palghar, India</span></div>
       <h1 class="hero-title">
         <span class="ln"><span>I cut long footage</span></span>
         <span class="ln"><span>down to the part</span></span>
@@ -248,13 +250,13 @@
   <div class="wrap">
     <div class="sec-head">
       <span class="sec-num mono">(04)</span>
-      <h2 class="sec-title reveal">Simple <em>pricing</em></h2>
-      <p class="sec-note reveal">Starting prices. The final quote depends on footage length and complexity.</p>
+      <h2 class="sec-title reveal">Flexible <em>packages</em></h2>
+      <p class="sec-note reveal">Every project is different. Tell me what you need — I’ll send a clear quote within 24 hours.</p>
     </div>
     <div class="plans">
       <div class="plan reveal">
         <span class="plan-name mono">Shorts / Reels</span>
-        <div class="plan-price"><small>from</small>₹1,000<span>/clip</span></div>
+        <div class="plan-price"><small>billed</small>Per clip</div>
         <ul>
           <li>Up to 60-second vertical edit</li>
           <li>Hook-first cut &amp; pacing</li>
@@ -262,11 +264,11 @@
           <li>Music &amp; sound effects</li>
           <li>1 revision round</li>
         </ul>
-        <a class="btn btn-line plan-cta" href="#contact" data-plan="Shorts / Reels">Choose plan</a>
+        <a class="btn btn-line plan-cta" href="#contact" data-plan="Shorts / Reels">Get a quote</a>
       </div>
       <div class="plan featured reveal" style="--d:.1s">
         <span class="plan-name mono">Long-form YouTube <b>Most booked</b></span>
-        <div class="plan-price"><small>from</small>₹2,500<span>/video</span></div>
+        <div class="plan-price"><small>billed</small>Per video</div>
         <ul>
           <li>Up to 15-minute final video</li>
           <li>Story, pacing &amp; jump-cut cleanup</li>
@@ -274,11 +276,11 @@
           <li>Sound cleanup + basic color</li>
           <li>2 revision rounds</li>
         </ul>
-        <a class="btn btn-solid plan-cta" href="#contact" data-plan="Long-form YouTube edit">Choose plan</a>
+        <a class="btn btn-solid plan-cta" href="#contact" data-plan="Long-form YouTube edit">Get a quote</a>
       </div>
       <div class="plan reveal" style="--d:.2s">
         <span class="plan-name mono">Monthly editor</span>
-        <div class="plan-price"><small>from</small>₹15,000<span>/month</span></div>
+        <div class="plan-price"><small>billed</small>Monthly</div>
         <ul>
           <li>4 long-form + 6 shorts a month</li>
           <li>One consistent editing style</li>
@@ -286,10 +288,10 @@
           <li>2 revision rounds per video</li>
           <li>Thumbnail-ready frames</li>
         </ul>
-        <a class="btn btn-line plan-cta" href="#contact" data-plan="Monthly channel editor">Choose plan</a>
+        <a class="btn btn-line plan-cta" href="#contact" data-plan="Monthly channel editor">Get a quote</a>
       </div>
     </div>
-    <p class="addon reveal"><span class="mono">Add-on</span>Color grade + sound pass — from ₹1,500 / video</p>
+    <p class="addon reveal"><span class="mono">Add-on</span>Color grade + sound pass for any package</p>
   </div>
 </section>
 
@@ -363,12 +365,11 @@
           </select></label>
         </div>
         <div class="f-row">
-          <label class="fld"><span>Budget</span><select name="budget">
-            <option>Under ₹2,500</option>
-            <option selected>₹2,500 – ₹10,000</option>
-            <option>₹10,000 – ₹25,000</option>
-            <option>₹25,000+</option>
-            <option>Not sure yet</option>
+          <label class="fld"><span>Scope</span><select name="budget">
+            <option selected>Not sure yet — need a quote</option>
+            <option>One-off video</option>
+            <option>A few videos</option>
+            <option>Ongoing / monthly</option>
           </select></label>
           <label class="fld"><span>Deadline</span><input name="deadline" type="date"></label>
         </div>
