@@ -40,8 +40,8 @@
 
 <!-- Loader -->
 <div class="loader" id="loader" aria-hidden="true">
-  <div class="loader-top mono"><span>MotionDroid</span><span>Video Editor</span></div>
-  <div class="loader-count" id="loaderCount">0</div>
+  <div class="loader-logo"><img src="logo-mark.png" alt=""><span class="loader-sweep"></span></div>
+  <div class="loader-foot mono"><span>MotionDroid</span><span id="loaderCount">0</span></div>
   <div class="loader-bar"><i id="loaderBar"></i></div>
 </div>
 
@@ -63,40 +63,57 @@
   </nav>
   <div class="nav-right">
     <span class="status mono"><i></i>Available for projects</span>
-    <a class="btn btn-line btn-sm" href="#contact">Let’s talk</a>
+    <a class="btn btn-line btn-sm nav-cta" href="#contact">Let’s talk</a>
+    <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false"><span></span><span></span></button>
   </div>
 </header>
 
+<div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+  <nav>
+    <a href="#work"><span class="mono">01</span>Work</a>
+    <a href="#services"><span class="mono">02</span>Services</a>
+    <a href="#process"><span class="mono">03</span>Process</a>
+    <a href="#pricing"><span class="mono">04</span>Pricing</a>
+    <a href="#about"><span class="mono">05</span>About</a>
+    <a href="#contact"><span class="mono">06</span>Contact</a>
+  </nav>
+  <div class="mm-foot mono"><span class="status"><i></i>Available for projects</span><a href="mailto:motiondroid.in@gmail.com">motiondroid.in@gmail.com</a></div>
+</div>
+
 <!-- Hero -->
 <section class="hero" id="top">
-  <div class="hero-media" aria-hidden="true">
-    <video id="heroVideo" muted loop playsinline preload="metadata" poster="showreel-thumbnail.jpg">
-      <source src="showreel.mp4" type="video/mp4">
-    </video>
-    <div class="hero-shade"></div>
+  <div class="hero-bg" aria-hidden="true">
+    <div class="hero-spot"></div>
+    <img class="hero-mark" src="logo-mark.png" alt="">
   </div>
 
   <div class="hero-inner">
-    <div class="hero-meta mono hero-in" style="--i:0">
-      <span>Video Editor &amp; Motion Designer — Palghar, India</span>
-      <span class="tc" id="heroTc">00:00:00:00</span>
-    </div>
-
-    <h1 class="hero-title">
-      <span class="ln"><span>I cut long footage</span></span>
-      <span class="ln"><span>down to the part people</span></span>
-      <span class="ln"><span><em>actually watch.</em></span></span>
-    </h1>
-
-    <div class="hero-foot">
-      <p class="hero-sub hero-in" style="--i:5">YouTube videos, Shorts &amp; Reels edited for retention — pacing, sound, captions and motion graphics.</p>
+    <div class="hero-copy">
+      <div class="hero-meta mono hero-in" style="--i:0"><span class="status"><i></i>Available for projects</span><span>Palghar, India</span></div>
+      <h1 class="hero-title">
+        <span class="ln"><span>I cut long footage</span></span>
+        <span class="ln"><span>down to the part</span></span>
+        <span class="ln"><span>people <em>actually</em></span></span>
+        <span class="ln"><span><em>watch.</em></span></span>
+      </h1>
+      <p class="hero-sub hero-in" style="--i:5">Video editor &amp; motion designer. YouTube videos, Shorts &amp; Reels edited for retention — pacing, sound, captions and motion graphics.</p>
       <div class="hero-actions hero-in" style="--i:6">
         <button class="btn btn-solid" id="playReel" type="button"><span class="play-ic"></span>Watch showreel</button>
         <a class="btn btn-ghost" href="#work">Selected work</a>
       </div>
     </div>
+    <div class="hero-photo hero-in" style="--i:2" aria-hidden="true">
+      <div class="hp-glow"></div>
+      <div class="hp-img"><img src="portrait.webp" alt=""></div>
+      <div class="hp-tag mono"><b>200+</b> videos edited</div>
+    </div>
   </div>
-  <a class="scroll-cue mono hero-in" style="--i:7" href="#work"><i></i>Scroll</a>
+
+  <div class="ruler hero-in" style="--i:7" aria-hidden="true">
+    <div class="ruler-ticks"></div>
+    <div class="ruler-head" id="rulerHead"></div>
+    <div class="ruler-meta mono"><span>Timeline — MotionDroid_Showreel_v26</span><span class="tc" id="heroTc">00:00:00:00</span></div>
+  </div>
 </section>
 
 <!-- Marquee -->
@@ -120,33 +137,37 @@
       <span class="media">
         <img src="thumb-cyber-trailer.jpg" alt="" loading="lazy">
         <video muted loop playsinline preload="none"></video>
+        <span class="play-btn"><i></i></span>
+        <span class="dur mono">1:56</span>
       </span>
       <span class="work-info">
+        <span class="w-meta mono">Featured — Client: UnixDroid</span>
         <span class="w-title">Cyber Security AI+ — Course Trailer</span>
-        <span class="w-meta mono">UnixDroid · Long-form trailer · 1:56</span>
+        <span class="w-desc">Launch trailer for a free cybersecurity course: kinetic typography, animated UI cards, cinematic B-roll and sound design, paced into a two-minute hook.</span>
+        <span class="chips"><span>Premiere Pro</span><span>After Effects</span><span>16:9</span></span>
       </span>
     </button>
 
     <div class="work-grid">
       <button class="work-reel work-item reveal" data-video="work-logo-reveal.mp4" aria-label="Play: Glowing Logo Reveal">
-        <span class="media"><img src="thumb-logo-reveal.jpg" alt="" loading="lazy"><video muted loop playsinline preload="none"></video></span>
+        <span class="media"><img src="thumb-logo-reveal.jpg" alt="" loading="lazy"><video muted loop playsinline preload="none"></video><span class="play-btn"><i></i></span><span class="dur mono">1:36</span></span>
         <span class="work-info">
           <span class="w-title">Glowing Logo Reveal</span>
-          <span class="w-meta mono">After Effects tutorial · 1:36</span>
+          <span class="w-meta mono">After Effects tutorial</span>
         </span>
       </button>
       <button class="work-reel work-item reveal" style="--d:.1s" data-video="work-vicky-style.mp4" aria-label="Play: Vicky Kaushal — Style Breakdown">
-        <span class="media"><img src="thumb-vicky-style.jpg" alt="" loading="lazy"><video muted loop playsinline preload="none"></video></span>
+        <span class="media"><img src="thumb-vicky-style.jpg" alt="" loading="lazy"><video muted loop playsinline preload="none"></video><span class="play-btn"><i></i></span><span class="dur mono">0:50</span></span>
         <span class="work-info">
           <span class="w-title">Vicky Kaushal — Style Breakdown</span>
-          <span class="w-meta mono">Fashion explainer · 0:50</span>
+          <span class="w-meta mono">Fashion explainer</span>
         </span>
       </button>
       <button class="work-reel work-item reveal" style="--d:.2s" data-video="work-tanmay-look.mp4" aria-label="Play: Tanmay Bhatt — Transformation Look">
-        <span class="media"><img src="thumb-tanmay-look.jpg" alt="" loading="lazy"><video muted loop playsinline preload="none"></video></span>
+        <span class="media"><img src="thumb-tanmay-look.jpg" alt="" loading="lazy"><video muted loop playsinline preload="none"></video><span class="play-btn"><i></i></span><span class="dur mono">1:06</span></span>
         <span class="work-info">
           <span class="w-title">Tanmay Bhatt — Transformation</span>
-          <span class="w-meta mono">Storytelling reel · 1:06</span>
+          <span class="w-meta mono">Storytelling reel</span>
         </span>
       </button>
     </div>
@@ -275,10 +296,10 @@
 <!-- About -->
 <section class="section" id="about">
   <div class="wrap about">
-    <div class="about-photo reveal">
-      <div class="spot"></div>
-      <img src="portrait.webp" alt="MotionDroid — video editor">
-      <span class="photo-cap mono">Palghar, India — <span id="localTime">--:--</span> IST</span>
+    <div class="about-brand reveal">
+      <div class="ab-glow"></div>
+      <img src="logo-full.png" alt="MotionDroid logo">
+      <span class="ab-cap mono">Palghar, India — <span id="localTime">--:--</span> IST</span>
     </div>
     <div class="about-text">
       <span class="sec-num mono">(05) About</span>
@@ -370,7 +391,7 @@
 
 <footer class="footer">
   <div class="wrap">
-    <div class="foot-mark" aria-hidden="true">MotionDroid<em>.</em></div>
+    <div class="foot-brand"><img src="logo-mark.png" alt="MotionDroid"><div class="foot-mark" aria-hidden="true">MotionDroid<em>.</em></div></div>
     <div class="foot-row mono">
       <span>© 2026 MotionDroid — Palghar, India</span>
       <a href="#top">Back to top ↑</a>

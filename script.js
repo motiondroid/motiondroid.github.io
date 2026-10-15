@@ -30,14 +30,27 @@
   /* ---------- Hero video + timecode ---------- */
   var hv = $('#heroVideo'), htc = $('#heroTc');
   if (hv && !reduce) { var pp = hv.play(); if (pp && pp.catch) pp.catch(function () {}); }
+  var rh = $('#rulerHead');
   if (htc) {
-    var start = performance.now();
-    setInterval(function () {
-      var s = hv && !hv.paused && hv.currentTime ? hv.currentTime : (performance.now() - start) / 1000;
+    var start = performance.now(), LOOP = 14;
+    (function tick(now) {
+      var s = ((now - start) / 1000);
       var f = Math.floor(s * 25);
       htc.textContent = '00:' + pad(Math.floor(s / 60) % 60) + ':' + pad(Math.floor(s) % 60) + ':' + pad(f % 25);
-    }, 40);
+      if (rh && !reduce) rh.style.transform = 'translateX(' + ((s % LOOP) / LOOP * rh.parentElement.clientWidth) + 'px)';
+      requestAnimationFrame(tick);
+    })(start);
   }
+
+  /* ---------- Mobile menu ---------- */
+  var mb = $('#menuBtn'), mm = $('#mobileMenu');
+  function setMenu(open) {
+    d.classList.toggle('menu-open', open);
+    if (mb) { mb.setAttribute('aria-expanded', open); mb.setAttribute('aria-label', open ? 'Close menu' : 'Open menu'); }
+    if (mm) mm.setAttribute('aria-hidden', !open);
+  }
+  if (mb) mb.addEventListener('click', function () { setMenu(!d.classList.contains('menu-open')); });
+  $$('#mobileMenu a').forEach(function (a) { a.addEventListener('click', function () { setMenu(false); }); });
 
   /* ---------- Nav state, progress, active link ---------- */
   var nav = $('#nav'), prog = $('#progress');
