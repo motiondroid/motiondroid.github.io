@@ -27,7 +27,7 @@ Saari files ek hi jagah (root) par hain — koi folder nahi, isliye upload karna
 | Kya badalna hai | Kahan |
 |---|---|
 | Text, prices, email, phone, links | `index.html` (GitHub par file kholo → ✏️ pencil icon → edit → Commit) |
-| Colors | `style.css` → sabse upar `:root { --accent: #FF6A3D; ... }` |
+| Colors | `style.css` → sabse upar `:root { --bg, --text, --accent ... }` |
 | Pricing / packages | `index.html` mein `id="pricing"` section |
 | How I work steps | `index.html` mein `id="process"` section |
 | Recent work ka title/description | `index.html` mein `id="work"` section |

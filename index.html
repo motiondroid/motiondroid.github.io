@@ -2,264 +2,219 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="description" content="MotionDroid — video editor for YouTube creators and brands. Long-form edits, Shorts/Reels, color grading and motion graphics. Based in Palghar, Maharashtra.">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>MotionDroid — Video Editor &amp; Motion Designer</title>
+<meta name="description" content="MotionDroid — video editor and motion designer for YouTube creators and brands. Long-form edits, Shorts & Reels, color, sound and motion graphics. Based in Palghar, India.">
+<meta name="theme-color" content="#050505">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://motiondroid.github.io/">
 <meta property="og:site_name" content="MotionDroid">
-<meta property="og:title" content="MotionDroid — Video Editor">
+<meta property="og:title" content="MotionDroid — Video Editor & Motion Designer">
 <meta property="og:description" content="YouTube videos, Shorts & Reels edited for retention — pacing, sound, captions and motion graphics.">
 <meta property="og:image" content="https://motiondroid.github.io/og-image.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="MotionDroid — Video Editor">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="MotionDroid — Video Editor">
-<meta name="twitter:description" content="YouTube videos, Shorts & Reels edited for retention.">
 <meta name="twitter:image" content="https://motiondroid.github.io/og-image.jpg">
 <link rel="canonical" href="https://motiondroid.github.io/">
-<meta name="theme-color" content="#0E1013">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>MotionDroid — Video Editor</title>
 <link rel="icon" type="image/png" href="favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 <script>
-  /* intro loader: once per visit, skipped for reduced motion; auto-removed after 4s as a safety net */
   (function () {
     var d = document.documentElement;
+    d.classList.add('js');
     try {
       if (window.matchMedia('(prefers-reduced-motion: reduce)').matches || sessionStorage.getItem('mdIntro')) return;
       sessionStorage.setItem('mdIntro', '1');
     } catch (e) {}
-    d.classList.add('js-loading');
-    setTimeout(function () { d.classList.remove('js-loading'); }, 4000);
+    d.classList.add('is-loading');
+    setTimeout(function () { d.classList.remove('is-loading'); }, 4500);
   })();
 </script>
 </head>
 <body>
-<div id="css-check" style="background:#b00020;color:#fff;padding:14px;font:16px sans-serif;text-align:center">⚠ style.css load nahi hui — check karo ki style.css repo ke main page par index.html ke saath hai (kisi folder ke andar nahi).</div>
+<div id="css-check" style="background:#b00020;color:#fff;padding:14px;font:16px sans-serif;text-align:center">⚠ style.css load nahi hui — check karo ki style.css repo ke main page par index.html ke saath hai.</div>
 
-<div id="loader" aria-hidden="true">
-  <div class="ld-logo"><img src="logo-mark.png" alt=""><span class="ld-sweep"></span></div>
-  <div class="ld-name">MOTIONDROID</div>
-  <div class="ld-bar"><i></i></div>
-  <div class="ld-tc mono" id="ldTc">00:00:00:00</div>
+<!-- Loader -->
+<div class="loader" id="loader" aria-hidden="true">
+  <div class="loader-top mono"><span>MotionDroid</span><span>Video Editor</span></div>
+  <div class="loader-count" id="loaderCount">0</div>
+  <div class="loader-bar"><i id="loaderBar"></i></div>
 </div>
 
+<div class="cursor" id="cursor" aria-hidden="true"><span class="cursor-label">Play</span></div>
 <div class="progress" id="progress"></div>
 
-<header>
-  <div class="nav-row">
-    <a class="brand" href="#top"><img class="brand-mark" src="logo-mark.png" alt="MotionDroid logo">MOTIONDROID<span>.</span></a>
-    <nav class="tc-nav">
-      <a href="#work"><span class="tc">00:01</span>WORK</a>
-      <a href="#services"><span class="tc">00:02</span>SERVICES</a>
-      <a href="#process"><span class="tc">00:03</span>PROCESS</a>
-      <a href="#pricing"><span class="tc">00:04</span>PRICING</a>
-      <a href="#about"><span class="tc">00:05</span>ABOUT</a>
-      <a href="#contact"><span class="tc">00:06</span>CONTACT</a>
-    </nav>
+<!-- Nav -->
+<header class="nav" id="nav">
+  <a class="brand" href="#top" aria-label="MotionDroid home">
+    <img src="logo-mark.png" alt="">
+    <span>MotionDroid</span>
+  </a>
+  <nav class="nav-links" aria-label="Main">
+    <a href="#work">Work</a>
+    <a href="#services">Services</a>
+    <a href="#process">Process</a>
+    <a href="#pricing">Pricing</a>
+    <a href="#about">About</a>
+  </nav>
+  <div class="nav-right">
+    <span class="status mono"><i></i>Available for projects</span>
+    <a class="btn btn-line btn-sm" href="#contact">Let’s talk</a>
   </div>
 </header>
 
-<div class="hero-shell">
-  <div class="hero-bg" aria-hidden="true">
-    <div class="grid-bg"></div>
-    <div class="blob b1" data-parallax="0.25"></div>
-    <div class="blob b2" data-parallax="-0.15"></div>
-    <div class="blob b3" data-parallax="0.4"></div>
-
-    <!-- floating editor glyphs: clapperboard, scissors, film, audio -->
-    <div class="glyph g1" data-parallax="-0.3">
-      <svg width="58" height="58" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11h16v9a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1z"/><path d="M4 11 3.2 7.2a1 1 0 0 1 .8-1.2L17.6 3a1 1 0 0 1 1.2.8L19.5 7 4 11"/><path d="m7.5 5.2 3 4M12.4 4.1l3 4.1"/></svg>
-    </div>
-    <div class="glyph g2" data-parallax="-0.5">
-      <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M20 4 8.1 15.9M14.5 14.5 20 20M8.1 8.1 12 12"/></svg>
-    </div>
-    <div class="glyph g3" data-parallax="-0.2">
-      <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="18" rx="2"/><path d="M7 3v18M17 3v18M2 8h5M2 13h5M2 18h5M17 8h5M17 13h5M17 18h5"/></svg>
-    </div>
-    <div class="glyph g4" data-parallax="-0.4">
-      <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"><path d="M2 12h2M6 8v8M10 5v14M14 9v6M18 7v10M22 12h-2"/></svg>
-    </div>
+<!-- Hero -->
+<section class="hero" id="top">
+  <div class="hero-media" aria-hidden="true">
+    <video id="heroVideo" muted loop playsinline preload="metadata" poster="showreel-thumbnail.jpg">
+      <source src="showreel.mp4" type="video/mp4">
+    </video>
+    <div class="hero-shade"></div>
   </div>
 
-  <div id="top" class="wrap hero">
-   <div class="hero-grid">
-   <div class="hero-copy">
-    <div class="kicker mono load-up" style="animation-delay:.05s"><i class="rec-dot"></i>VIDEO EDITOR — YOUTUBE &amp; SOCIAL</div>
-    <h1 id="heroTitle">I cut long footage down to the part people actually watch.</h1>
-    <p class="sub load-up" style="animation-delay:.75s">I edit YouTube videos and shorts for creators — pacing, sound, and story so the video holds attention from frame one. Currently editing for 10 regular clients, with room for a couple more.</p>
-    <div class="cta-row load-up" style="animation-delay:.9s">
-      <a class="btn btn-primary" href="#contact">Start a project <span class="arr">→</span></a>
-      <a class="btn btn-ghost" href="#work">See recent edits</a>
+  <div class="hero-inner">
+    <div class="hero-meta mono hero-in" style="--i:0">
+      <span>Video Editor &amp; Motion Designer — Palghar, India</span>
+      <span class="tc" id="heroTc">00:00:00:00</span>
     </div>
-   </div>
 
-   <div class="hero-portrait" id="portrait" aria-hidden="true">
-     <div class="pt-inner">
-       <div class="pt-ring"></div>
-       <div class="pt-glow"></div>
-       <svg class="pt-text" viewBox="0 0 200 200"><defs><path id="circ" d="M100,100 m-88,0 a88,88 0 1,1 176,0 a88,88 0 1,1 -176,0"/></defs><text><textPath href="#circ">MOTIONDROID ✦ VIDEO EDITOR ✦ MOTION GRAPHICS ✦ </textPath></text></svg>
-       <div class="pt-img"><div class="pt-mask"><img src="portrait.webp" alt=""></div></div>
-       <div class="pt-chip c1"><b>200+</b> videos edited</div>
-       <div class="pt-chip c2"><i class="rec-dot"></i> REC 00:00:24</div>
-       <div class="pt-chip c3"><span class="mini-wave"><i></i><i></i><i></i><i></i><i></i></span> Premiere · AE</div>
-     </div>
-   </div>
-   </div>
+    <h1 class="hero-title">
+      <span class="ln"><span>I cut long footage</span></span>
+      <span class="ln"><span>down to the part people</span></span>
+      <span class="ln"><span><em>actually watch.</em></span></span>
+    </h1>
 
-    <div class="scrubber reveal" id="scrubber" style="--d:150ms">
-      <div class="scrubber-top">
-        <span class="dots"><i></i><i></i><i></i></span>
-        <span class="now" id="tc">00:00:14:02</span>
-        <span>00:04:30:00</span>
-      </div>
-      <div class="tl-body">
-        <div class="tracks">
-          <div class="track"><span class="lbl">V2</span><div class="lane">
-            <div class="clip v2" style="left:18%;width:14%;transition-delay:.35s">TITLE</div>
-            <div class="clip v2" style="left:62%;width:10%;transition-delay:.55s">LOWER</div>
-          </div></div>
-          <div class="track"><span class="lbl">V1</span><div class="lane">
-            <div class="clip v" style="left:0;width:24%;transition-delay:.1s">A-ROLL_01</div>
-            <div class="clip fx" style="left:24.5%;width:9%;transition-delay:.25s">B-ROLL</div>
-            <div class="clip v" style="left:34%;width:30%;transition-delay:.4s">A-ROLL_02</div>
-            <div class="clip fx" style="left:64.5%;width:12%;transition-delay:.5s">B-ROLL</div>
-            <div class="clip v" style="left:77%;width:23%;transition-delay:.6s">OUTRO</div>
-          </div></div>
-          <div class="track"><span class="lbl">A1</span><div class="lane">
-            <div class="clip a" style="left:0;width:64%;transition-delay:.2s">VO.wav</div>
-            <div class="clip a" style="left:64.5%;width:35.5%;transition-delay:.45s">VO_02.wav</div>
-          </div></div>
-        </div>
-        <div class="wave" id="wave"></div>
-        <div class="playline" id="playline"></div>
+    <div class="hero-foot">
+      <p class="hero-sub hero-in" style="--i:5">YouTube videos, Shorts &amp; Reels edited for retention — pacing, sound, captions and motion graphics.</p>
+      <div class="hero-actions hero-in" style="--i:6">
+        <button class="btn btn-solid" id="playReel" type="button"><span class="play-ic"></span>Watch showreel</button>
+        <a class="btn btn-ghost" href="#work">Selected work</a>
       </div>
     </div>
   </div>
-</div>
-
-<div class="marquee" aria-hidden="true">
-  <div class="marquee-track">
-    <span>CUT</span><span>PACE</span><span>COLOR</span><span>SOUND</span><span>MOTION</span><span>CAPTIONS</span><span>STORY</span><span>HOOK</span><span>RETENTION</span>
-    <span>CUT</span><span>PACE</span><span>COLOR</span><span>SOUND</span><span>MOTION</span><span>CAPTIONS</span><span>STORY</span><span>HOOK</span><span>RETENTION</span>
-  </div>
-</div>
-
-<section id="showreel">
-  <div class="wrap">
-    <div class="section-head reveal"><span class="tc mono">00:00</span><h2>Showreel</h2><span class="rule"></span></div>
-        <div class="reel reveal" style="--d:100ms">
-      <video id="reelVideo" playsinline preload="none" poster="showreel-thumbnail.jpg" src="showreel.mp4"></video>
-      <button class="reel-ph" id="reelPlay" aria-label="Play showreel">
-        <span class="play big"></span>
-        <span class="mono reel-note">ALOVERA · PRODUCT AD · 0:32</span>
-      </button>
-      <span class="corner tl"></span><span class="corner tr"></span><span class="corner bl"></span><span class="corner br"></span>
-    </div>
-  </div>
+  <a class="scroll-cue mono hero-in" style="--i:7" href="#work"><i></i>Scroll</a>
 </section>
 
-<section id="work">
-  <div class="wrap">
-    <div class="section-head reveal"><span class="tc mono">00:01</span><h2>Recent work</h2><span class="rule"></span></div>
-    <p class="section-lede reveal" style="--d:100ms">Promo trailers, tutorials and short-form explainers. Hover to preview, click to watch with sound.</p>
+<!-- Marquee -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <span>Long-form</span><em>Shorts</em><span>Color</span><em>Sound</em><span>Motion</span><em>Captions</em><span>Story</span><em>Retention</em>
+    <span>Long-form</span><em>Shorts</em><span>Color</span><em>Sound</em><span>Motion</span><em>Captions</em><span>Story</span><em>Retention</em>
+  </div>
+</div>
 
-    <button class="feature-card work-item reveal" data-video="work-cyber-trailer.mp4" aria-label="Play: Cyber Security AI+ course trailer">
-      <span class="fc-media">
+<!-- Work -->
+<section class="section" id="work">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-num mono">(01)</span>
+      <h2 class="sec-title reveal">Selected <em>work</em></h2>
+      <p class="sec-note reveal">Trailers, tutorials and short-form explainers. Hover to preview — click to watch with sound.</p>
+    </div>
+
+    <button class="work-feature work-item reveal" data-video="work-cyber-trailer.mp4" aria-label="Play: Cyber Security AI+ course trailer">
+      <span class="media">
         <img src="thumb-cyber-trailer.jpg" alt="" loading="lazy">
         <video muted loop playsinline preload="none"></video>
-        <span class="play"></span><span class="dur">1:56</span>
       </span>
-      <span class="fc-meta">
-        <span class="tag">LONG-FORM · COURSE TRAILER</span>
-        <span class="fc-title">Cyber Security AI+ — Course Trailer</span>
-        <span class="fc-desc">Launch trailer for UnixDroid’s free cybersecurity course — kinetic typography, animated UI cards, cinematic B-roll and sound design, paced into a 2-minute hook.</span>
-        <span class="chips"><span>Client: UnixDroid</span><span>Premiere Pro</span><span>After Effects</span><span>16:9</span></span>
+      <span class="work-info">
+        <span class="w-title">Cyber Security AI+ — Course Trailer</span>
+        <span class="w-meta mono">UnixDroid · Long-form trailer · 1:56</span>
       </span>
     </button>
 
-    <div class="reel-grid">
-      <button class="reel-card work-item reveal" style="--d:0ms" data-video="work-logo-reveal.mp4" aria-label="Play: Glowing Logo Reveal">
-        <img src="thumb-logo-reveal.jpg" alt="" loading="lazy">
-        <video muted loop playsinline preload="none"></video>
-        <span class="play"></span><span class="dur">1:36</span>
-        <span class="rc-meta"><span class="tag">REEL · AFTER EFFECTS TUTORIAL</span><span class="rc-title">Glowing Logo Reveal</span><span class="rc-desc">Step-by-step After Effects breakdown of the MotionDroid light-sweep logo reveal — CC Light Sweep, Glow and compositing.</span></span>
+    <div class="work-grid">
+      <button class="work-reel work-item reveal" data-video="work-logo-reveal.mp4" aria-label="Play: Glowing Logo Reveal">
+        <span class="media"><img src="thumb-logo-reveal.jpg" alt="" loading="lazy"><video muted loop playsinline preload="none"></video></span>
+        <span class="work-info">
+          <span class="w-title">Glowing Logo Reveal</span>
+          <span class="w-meta mono">After Effects tutorial · 1:36</span>
+        </span>
       </button>
-      <button class="reel-card work-item reveal" style="--d:120ms" data-video="work-vicky-style.mp4" aria-label="Play: Vicky Kaushal — Style Breakdown">
-        <img src="thumb-vicky-style.jpg" alt="" loading="lazy">
-        <video muted loop playsinline preload="none"></video>
-        <span class="play"></span><span class="dur">0:50</span>
-        <span class="rc-meta"><span class="tag">REEL · FASHION EXPLAINER</span><span class="rc-title">Vicky Kaushal — Style Breakdown</span><span class="rc-desc">Face-shape and styling explainer with tracked annotations, cut-out overlays and word-by-word captions.</span></span>
+      <button class="work-reel work-item reveal" style="--d:.1s" data-video="work-vicky-style.mp4" aria-label="Play: Vicky Kaushal — Style Breakdown">
+        <span class="media"><img src="thumb-vicky-style.jpg" alt="" loading="lazy"><video muted loop playsinline preload="none"></video></span>
+        <span class="work-info">
+          <span class="w-title">Vicky Kaushal — Style Breakdown</span>
+          <span class="w-meta mono">Fashion explainer · 0:50</span>
+        </span>
       </button>
-      <button class="reel-card work-item reveal" style="--d:240ms" data-video="work-tanmay-look.mp4" aria-label="Play: Tanmay Bhatt — Transformation Look">
-        <img src="thumb-tanmay-look.jpg" alt="" loading="lazy">
-        <video muted loop playsinline preload="none"></video>
-        <span class="play"></span><span class="dur">1:06</span>
-        <span class="rc-meta"><span class="tag">REEL · STORYTELLING</span><span class="rc-title">Tanmay Bhatt — Transformation Look</span><span class="rc-desc">Editorial transformation story — cut-out subjects, before/after comparisons and kinetic serif captions.</span></span>
+      <button class="work-reel work-item reveal" style="--d:.2s" data-video="work-tanmay-look.mp4" aria-label="Play: Tanmay Bhatt — Transformation Look">
+        <span class="media"><img src="thumb-tanmay-look.jpg" alt="" loading="lazy"><video muted loop playsinline preload="none"></video></span>
+        <span class="work-info">
+          <span class="w-title">Tanmay Bhatt — Transformation</span>
+          <span class="w-meta mono">Storytelling reel · 1:06</span>
+        </span>
       </button>
     </div>
   </div>
 </section>
 
-<section id="services">
+<!-- Services -->
+<section class="section" id="services">
   <div class="wrap">
-    <div class="section-head reveal"><span class="tc mono">00:02</span><h2>Services</h2><span class="rule"></span></div>
-    <div class="service-list">
-      <div class="service-row reveal" style="--d:0ms">
-        <span class="tc">01</span>
-        <div><h3>Long-form YouTube edit</h3><p>Full edit from raw footage — cuts, pacing, captions, sound cleanup.</p></div>
-        <span class="price">16:9 · YouTube</span>
+    <div class="sec-head">
+      <span class="sec-num mono">(02)</span>
+      <h2 class="sec-title reveal">What I <em>do</em></h2>
+    </div>
+    <div class="svc-list">
+      <div class="svc reveal">
+        <span class="svc-n mono">01</span>
+        <h3>Long-form YouTube</h3>
+        <p>Full edit from raw footage — structure, pacing, jump-cut cleanup, captions, B-roll and sound.</p>
       </div>
-      <div class="service-row reveal" style="--d:100ms">
-        <span class="tc">02</span>
-        <div><h3>Shorts &amp; Reels cutdown</h3><p>Turn one long video into several vertical clips built to hook fast.</p></div>
-        <span class="price">9:16 · Reels</span>
+      <div class="svc reveal">
+        <span class="svc-n mono">02</span>
+        <h3>Shorts &amp; Reels</h3>
+        <p>Vertical cuts built to hook in the first second — tight pacing, animated captions, music and SFX.</p>
       </div>
-      <div class="service-row reveal" style="--d:200ms">
-        <span class="tc">03</span>
-        <div><h3>Color grade + sound pass</h3><p>A consistent look and clean audio applied across an existing edit.</p></div>
-        <span class="price">Look + audio</span>
+      <div class="svc reveal">
+        <span class="svc-n mono">03</span>
+        <h3>Color &amp; Sound</h3>
+        <p>A consistent look and clean, balanced audio across one video or a whole series.</p>
       </div>
-      <div class="service-row reveal" style="--d:300ms">
-        <span class="tc">04</span>
-        <div><h3>Ongoing channel editor</h3><p>Weekly or monthly edits for a channel that publishes on a schedule.</p></div>
-        <span class="price">Retainer</span>
+      <div class="svc reveal">
+        <span class="svc-n mono">04</span>
+        <h3>Motion Graphics</h3>
+        <p>Logo reveals, titles, lower thirds and animated explainers in After Effects.</p>
       </div>
     </div>
   </div>
 </section>
 
-<section id="process">
+<!-- Process -->
+<section class="section" id="process">
   <div class="wrap">
-    <div class="section-head reveal"><span class="tc mono">00:03</span><h2>How I work</h2><span class="rule"></span></div>
-    <p class="section-lede reveal" style="--d:100ms">A simple four-step flow — you always know what’s happening and when.</p>
-    <div class="steps" id="steps">
-      <div class="steps-track"><i></i></div>
-      <div class="step reveal" style="--d:0ms">
-        <span class="step-dot">01</span>
-        <span class="step-chip mono">DAY 0</span>
+    <div class="sec-head">
+      <span class="sec-num mono">(03)</span>
+      <h2 class="sec-title reveal">How I <em>work</em></h2>
+      <p class="sec-note reveal">Four clear steps — you always know what’s happening and when.</p>
+    </div>
+    <div class="steps">
+      <div class="step reveal">
+        <span class="step-line"></span>
+        <div class="step-top"><span class="step-n">i.</span><span class="step-time mono">Day 0</span></div>
         <h3>Brief &amp; footage</h3>
-        <p>Share the raw footage (a Drive link works), a reference video you like and your deadline. I confirm scope and price before starting.</p>
+        <p>Share the raw footage (a Drive link works), a reference you like and your deadline. Scope and price are confirmed before I start.</p>
       </div>
-      <div class="step reveal" style="--d:150ms">
-        <span class="step-dot">02</span>
-        <span class="step-chip mono">2–3 DAYS</span>
+      <div class="step reveal" style="--d:.1s">
+        <span class="step-line"></span>
+        <div class="step-top"><span class="step-n">ii.</span><span class="step-time mono">2–3 days</span></div>
         <h3>First cut</h3>
-        <p>I cut for story and pacing first — hook, structure, B-roll, captions, music and sound cleanup.</p>
+        <p>Story and pacing first — hook, structure, B-roll, captions, music and sound cleanup.</p>
       </div>
-      <div class="step reveal" style="--d:300ms">
-        <span class="step-dot">03</span>
-        <span class="step-chip mono">2 ROUNDS</span>
+      <div class="step reveal" style="--d:.2s">
+        <span class="step-line"></span>
+        <div class="step-top"><span class="step-n">iii.</span><span class="step-time mono">2 rounds</span></div>
         <h3>Revisions</h3>
         <p>You leave timestamped notes, I refine the cut. Two revision rounds are included.</p>
       </div>
-      <div class="step reveal" style="--d:450ms">
-        <span class="step-dot">04</span>
-        <span class="step-chip mono">FINAL FILE</span>
+      <div class="step reveal" style="--d:.3s">
+        <span class="step-line"></span>
+        <div class="step-top"><span class="step-n">iv.</span><span class="step-time mono">Final</span></div>
         <h3>Delivery</h3>
         <p>Final export in the right format for YouTube, Shorts or Reels — ready to upload.</p>
       </div>
@@ -267,14 +222,18 @@
   </div>
 </section>
 
-<section id="pricing">
+<!-- Pricing -->
+<section class="section" id="pricing">
   <div class="wrap">
-    <div class="section-head reveal"><span class="tc mono">00:04</span><h2>Pricing</h2><span class="rule"></span></div>
-    <p class="section-lede reveal" style="--d:100ms">Starting prices — the final quote depends on footage length and complexity.</p>
-    <div class="price-grid">
-      <div class="plan reveal" style="--d:0ms">
-        <span class="plan-name mono">SHORTS / REELS</span>
-        <div class="plan-price"><small>from</small> ₹1,000 <span>/ clip</span></div>
+    <div class="sec-head">
+      <span class="sec-num mono">(04)</span>
+      <h2 class="sec-title reveal">Simple <em>pricing</em></h2>
+      <p class="sec-note reveal">Starting prices. The final quote depends on footage length and complexity.</p>
+    </div>
+    <div class="plans">
+      <div class="plan reveal">
+        <span class="plan-name mono">Shorts / Reels</span>
+        <div class="plan-price"><small>from</small>₹1,000<span>/clip</span></div>
         <ul>
           <li>Up to 60-second vertical edit</li>
           <li>Hook-first cut &amp; pacing</li>
@@ -282,12 +241,11 @@
           <li>Music &amp; sound effects</li>
           <li>1 revision round</li>
         </ul>
-        <a class="btn btn-ghost plan-cta" href="#contact" data-plan="Shorts / Reels">Choose Reels</a>
+        <a class="btn btn-line plan-cta" href="#contact" data-plan="Shorts / Reels">Choose plan</a>
       </div>
-      <div class="plan featured reveal" style="--d:120ms">
-        <span class="plan-badge mono">MOST POPULAR</span>
-        <span class="plan-name mono">LONG-FORM YOUTUBE</span>
-        <div class="plan-price"><small>from</small> ₹2,500 <span>/ video</span></div>
+      <div class="plan featured reveal" style="--d:.1s">
+        <span class="plan-name mono">Long-form YouTube <b>Most booked</b></span>
+        <div class="plan-price"><small>from</small>₹2,500<span>/video</span></div>
         <ul>
           <li>Up to 15-minute final video</li>
           <li>Story, pacing &amp; jump-cut cleanup</li>
@@ -295,174 +253,145 @@
           <li>Sound cleanup + basic color</li>
           <li>2 revision rounds</li>
         </ul>
-        <a class="btn btn-primary plan-cta" href="#contact" data-plan="Long-form YouTube edit">Choose Long-form <span class="arr">→</span></a>
+        <a class="btn btn-solid plan-cta" href="#contact" data-plan="Long-form YouTube edit">Choose plan</a>
       </div>
-      <div class="plan reveal" style="--d:240ms">
-        <span class="plan-name mono">MONTHLY CHANNEL EDITOR</span>
-        <div class="plan-price"><small>from</small> ₹15,000 <span>/ month</span></div>
+      <div class="plan reveal" style="--d:.2s">
+        <span class="plan-name mono">Monthly editor</span>
+        <div class="plan-price"><small>from</small>₹15,000<span>/month</span></div>
         <ul>
-          <li>4 long-form + 6 shorts / month</li>
+          <li>4 long-form + 6 shorts a month</li>
           <li>One consistent editing style</li>
           <li>Priority turnaround</li>
           <li>2 revision rounds per video</li>
           <li>Thumbnail-ready frames</li>
         </ul>
-        <a class="btn btn-ghost plan-cta" href="#contact" data-plan="Monthly channel editor">Choose Monthly</a>
+        <a class="btn btn-line plan-cta" href="#contact" data-plan="Monthly channel editor">Choose plan</a>
       </div>
     </div>
-    <p class="addon reveal"><span class="mono">ADD-ON</span> Color grade + sound pass — from ₹1,500 / video</p>
+    <p class="addon reveal"><span class="mono">Add-on</span>Color grade + sound pass — from ₹1,500 / video</p>
   </div>
 </section>
 
-<section id="about">
-  <div class="wrap">
-    <div class="section-head reveal"><span class="tc mono">00:05</span><h2>About</h2><span class="rule"></span></div>
-    <div class="about-grid">
-      <div>
-        <p class="reveal">I've spent the last two years editing and teaching editing — currently training students at a computer institute while building my own YouTube content on the side. I care most about pacing and story flow: getting a cut to feel right before anything else.</p>
-        <p class="reveal" style="--d:120ms">I work mainly in Premiere Pro and After Effects, with Photoshop for thumbnails and DaVinci Resolve for grading. I work directly with creators, from the raw footage handoff through to final delivery, and I'm comfortable managing feedback rounds over whatever tool a client already uses.</p>
-        <div class="frame-art reveal" style="--d:220ms" aria-hidden="true">
-          <svg viewBox="0 0 480 120" id="filmstrip">
-            <rect width="480" height="120" fill="#14171B"/>
-            <rect x="0" y="0" width="480" height="14" fill="#0E1013"/><rect x="0" y="106" width="480" height="14" fill="#0E1013"/>
-            <g id="sprockets" fill="#262B31"></g>
-            <rect x="6" y="20" width="110" height="80" rx="2" fill="#2A1A14"/><circle cx="61" cy="60" r="22" fill="#FF6A3D" opacity=".6"/>
-            <rect x="124" y="20" width="110" height="80" rx="2" fill="#15222A"/><rect x="150" y="40" width="58" height="40" rx="3" fill="#4FA8A0" opacity=".6"/>
-            <rect x="242" y="20" width="110" height="80" rx="2" fill="#1B1726"/><path d="M262 88 L297 42 L332 88Z" fill="#7C6CF0" opacity=".6"/>
-            <rect x="360" y="20" width="114" height="80" rx="2" fill="#221A14"/><path d="M380 60h74M417 34v52" stroke="#FFB38A" stroke-width="2" opacity=".6"/>
-          </svg>
-        </div>
+<!-- About -->
+<section class="section" id="about">
+  <div class="wrap about">
+    <div class="about-photo reveal">
+      <div class="spot"></div>
+      <img src="portrait.webp" alt="MotionDroid — video editor">
+      <span class="photo-cap mono">Palghar, India — <span id="localTime">--:--</span> IST</span>
+    </div>
+    <div class="about-text">
+      <span class="sec-num mono">(05) About</span>
+      <p class="about-lead reveal">I care about one thing first: getting the cut to <em>feel right.</em></p>
+      <p class="about-body reveal">For the last two years I’ve been editing and teaching editing — training students at a computer institute while building my own YouTube content on the side. I work directly with creators, from the raw footage handoff to final delivery, and I’m comfortable running feedback rounds over whatever tool a client already uses.</p>
+      <div class="stats">
+        <div class="stat reveal"><span class="stat-v"><span class="count" data-to="200">0</span>+</span><span class="stat-l mono">Videos edited</span></div>
+        <div class="stat reveal" style="--d:.1s"><span class="stat-v"><span class="count" data-to="10">0</span></span><span class="stat-l mono">Regular clients</span></div>
+        <div class="stat reveal" style="--d:.2s"><span class="stat-v"><span class="count" data-to="2">0</span>+</span><span class="stat-l mono">Years editing</span></div>
       </div>
-      <div>
-                <div class="photo reveal" style="--d:60ms">
-          <div class="photo-ph"><img src="logo-full.png" alt="MotionDroid logo"></div>
-          <span class="corner tl"></span><span class="corner tr"></span><span class="corner bl"></span><span class="corner br"></span>
-          <span class="photo-tag mono">BRAND ● MOTIONDROID</span>
-        </div>
-        <div class="stats">
-          <div class="stat-box reveal" style="--d:100ms">
-            <div class="num"><span class="count" data-to="2">0</span>+</div>
-            <div class="lbl">years editing &amp; teaching</div>
-          </div>
-          <div class="stat-box reveal" style="--d:180ms">
-            <div class="num"><span class="count" data-to="200">0</span>+</div>
-            <div class="lbl">videos edited</div>
-          </div>
-          <div class="stat-box reveal" style="--d:260ms">
-            <div class="num"><span class="count" data-to="10">0</span></div>
-            <div class="lbl">regular clients</div>
-          </div>
-        </div>
+      <div class="tools reveal">
+        <span class="mono tools-h">Toolkit</span>
+        <ul>
+          <li>Premiere Pro <span>Advanced</span></li>
+          <li>After Effects <span>Advanced</span></li>
+          <li>Photoshop <span>Advanced</span></li>
+          <li>Media Encoder <span>Advanced</span></li>
+          <li>DaVinci Resolve <span>Intermediate</span></li>
+          <li>Illustrator <span>Intermediate</span></li>
+          <li>Canva <span>Intermediate</span></li>
+          <li>CapCut <span>Basic</span></li>
+        </ul>
       </div>
     </div>
   </div>
 </section>
 
-<section id="tools" style="padding-top:0; border-top:none;">
-  <div class="wrap">
-    <div class="tool-grid">
-      <div class="tool-pill reveal" style="--d:0ms"><span class="ic" style="background:#2A1250;color:#E1B6FF">Pr</span>Premiere Pro<span class="meter"><b style="--w:92%"></b></span><span class="lvl">advanced</span></div>
-      <div class="tool-pill reveal" style="--d:60ms"><span class="ic" style="background:#1B1450;color:#C7A6FF">Ae</span>After Effects<span class="meter"><b style="--w:88%"></b></span><span class="lvl">advanced</span></div>
-      <div class="tool-pill reveal" style="--d:120ms"><span class="ic" style="background:#0C2340;color:#4FB8FF">Ps</span>Photoshop<span class="meter"><b style="--w:88%"></b></span><span class="lvl">advanced</span></div>
-      <div class="tool-pill reveal" style="--d:180ms"><span class="ic" style="background:#1D1840;color:#9C8CFF">Me</span>Media Encoder<span class="meter"><b style="--w:90%"></b></span><span class="lvl">advanced</span></div>
-      <div class="tool-pill reveal" style="--d:240ms"><span class="ic" style="background:#3A1E05;color:#FF9A00">Ai</span>Illustrator<span class="meter"><b style="--w:60%"></b></span><span class="lvl">intermediate</span></div>
-      <div class="tool-pill reveal" style="--d:300ms"><span class="ic" style="background:#1E2A33;color:#8FD3FF">Dr</span>DaVinci Resolve<span class="meter"><b style="--w:60%"></b></span><span class="lvl">intermediate</span></div>
-      <div class="tool-pill reveal" style="--d:360ms"><span class="ic" style="background:#12302C;color:#6EE7D8">Cv</span>Canva<span class="meter"><b style="--w:60%"></b></span><span class="lvl">intermediate</span></div>
-      <div class="tool-pill reveal" style="--d:420ms"><span class="ic" style="background:#26282C;color:#ECEDEF">Cc</span>CapCut<span class="meter"><b style="--w:30%"></b></span><span class="lvl">basic</span></div>
-    </div>
+<!-- Clients -->
+<section class="clients-sec" id="clients">
+  <div class="wrap clients">
+    <span class="mono clients-h">Trusted by</span>
+    <a class="client" href="https://www.instagram.com/unixdroid.in/" target="_blank" rel="noopener">
+      <span class="client-name">UnixDroid</span>
+      <span class="mono client-meta">Cybersecurity education — @unixdroid.in ↗</span>
+    </a>
   </div>
 </section>
 
-<section id="clients">
+<!-- Contact -->
+<section class="section contact-sec" id="contact">
   <div class="wrap">
-    <div class="section-head reveal"><span class="tc mono">00:06</span><h2>Clients</h2><span class="rule"></span></div>
-    <div class="client-grid">
-      <a class="client-card reveal" href="https://www.instagram.com/unixdroid.in/" target="_blank" rel="noopener">
-        <div class="client-logo mono">&gt;_</div>
-        <div class="client-info">
-          <h3>UnixDroid</h3>
-          <span class="mono handle">@unixdroid.in</span>
-          <p>Cybersecurity &amp; ethical hacking education — reels and short-form edits.</p>
+    <span class="sec-num mono">(06) Contact</span>
+    <h2 class="contact-title reveal">Let’s make something<br><em>worth watching.</em></h2>
+    <div class="contact-grid">
+      <form class="cform reveal" id="cform" novalidate>
+        <input type="hidden" name="_subject" value="New project enquiry — motiondroid.github.io">
+        <input type="hidden" name="_template" value="table">
+        <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off">
+        <div class="f-row">
+          <label class="fld"><span>Your name*</span><input name="name" required></label>
+          <label class="fld"><span>Email*</span><input name="email" type="email" required></label>
         </div>
-        <span class="client-arrow">↗</span>
-      </a>
-    </div>
-  </div>
-</section>
-
-<section id="contact">
-  <div class="wrap">
-    <div class="contact-panel contact-grid reveal">
-      <div class="cf-col">
-        <h2>Got a video that needs an edit?</h2>
-        <p>Tell me about the project — I’ll reply with a quote and a timeline, usually within 24 hours.</p>
-
-        <form class="cform" id="cform" novalidate>
-          <input type="hidden" name="_subject" value="New project enquiry — motiondroid.github.io">
-          <input type="hidden" name="_template" value="table">
-          <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off">
-          <div class="f-row">
-            <label>Name*<input name="name" required placeholder="Your name"></label>
-            <label>Email*<input name="email" type="email" required placeholder="you@email.com"></label>
-          </div>
-          <div class="f-row">
-            <label>WhatsApp<input name="whatsapp" type="tel" placeholder="Optional"></label>
-            <label>Project type
-              <select name="project_type" id="fType">
-                <option>Long-form YouTube edit</option>
-                <option>Shorts / Reels</option>
-                <option>Color grade + sound</option>
-                <option>Monthly channel editor</option>
-                <option>Something else</option>
-              </select>
-            </label>
-          </div>
-          <div class="f-row">
-            <label>Budget
-              <select name="budget">
-                <option>Under ₹2,500</option>
-                <option selected>₹2,500 – ₹10,000</option>
-                <option>₹10,000 – ₹25,000</option>
-                <option>₹25,000+</option>
-                <option>Not sure yet</option>
-              </select>
-            </label>
-            <label>Deadline<input name="deadline" type="date"></label>
-          </div>
-          <label>Project details*<textarea name="message" rows="4" required placeholder="Footage length, channel link, reference video, anything else…"></textarea></label>
-          <button class="btn btn-primary f-submit" type="submit"><span class="f-label">Send project brief</span> <span class="arr">→</span></button>
+        <div class="f-row">
+          <label class="fld"><span>WhatsApp</span><input name="whatsapp" type="tel" placeholder="Optional"></label>
+          <label class="fld"><span>Project type</span><select name="project_type" id="fType">
+            <option>Long-form YouTube edit</option>
+            <option>Shorts / Reels</option>
+            <option>Color grade + sound</option>
+            <option>Monthly channel editor</option>
+            <option>Something else</option>
+          </select></label>
+        </div>
+        <div class="f-row">
+          <label class="fld"><span>Budget</span><select name="budget">
+            <option>Under ₹2,500</option>
+            <option selected>₹2,500 – ₹10,000</option>
+            <option>₹10,000 – ₹25,000</option>
+            <option>₹25,000+</option>
+            <option>Not sure yet</option>
+          </select></label>
+          <label class="fld"><span>Deadline</span><input name="deadline" type="date"></label>
+        </div>
+        <label class="fld"><span>Project details*</span><textarea name="message" rows="3" required placeholder="Footage length, channel link, references…"></textarea></label>
+        <div class="f-foot">
+          <button class="btn btn-solid f-submit" type="submit"><span class="f-label">Send project brief</span><span class="arr">→</span></button>
           <p class="f-status" id="fStatus" role="status" aria-live="polite"></p>
-        </form>
-      </div>
-      <div class="contact-side">
-        <span class="mono side-label">OR REACH OUT DIRECTLY</span>
-        <a class="btn btn-ghost side-wa" href="https://wa.me/919792910043" target="_blank" rel="noopener">WhatsApp me <span class="arr">→</span></a>
-        <div class="contact-links">
-          <a href="mailto:motiondroid.in@gmail.com">motiondroid.in@gmail.com</a>
-          <a href="tel:+919792910043">+91 9792910043</a>
-          <a href="https://www.instagram.com/motiondroid.in/" target="_blank" rel="noopener">Instagram ↗</a>
-          <a href="https://www.youtube.com/@motiondroid_in" target="_blank" rel="noopener">YouTube ↗</a>
         </div>
-      </div>
+      </form>
+      <aside class="contact-side reveal" style="--d:.1s">
+        <p class="side-note">Prefer a quick chat? I usually reply within 24 hours.</p>
+        <a class="side-link" href="https://wa.me/9197929910043" target="_blank" rel="noopener"><span class="mono">WhatsApp</span><b>+91 97929 910043</b><i>↗</i></a>
+        <a class="side-link" href="mailto:motiondroid.in@gmail.com"><span class="mono">Email</span><b>motiondroid.in@gmail.com</b><i>↗</i></a>
+        <a class="side-link" href="https://www.instagram.com/motiondroid.in/" target="_blank" rel="noopener"><span class="mono">Instagram</span><b>@motiondroid.in</b><i>↗</i></a>
+        <a class="side-link" href="https://www.youtube.com/@motiondroid_in" target="_blank" rel="noopener"><span class="mono">YouTube</span><b>@motiondroid_in</b><i>↗</i></a>
+      </aside>
     </div>
   </div>
 </section>
 
+<footer class="footer">
+  <div class="wrap">
+    <div class="foot-mark" aria-hidden="true">MotionDroid<em>.</em></div>
+    <div class="foot-row mono">
+      <span>© 2026 MotionDroid — Palghar, India</span>
+      <a href="#top">Back to top ↑</a>
+    </div>
+  </div>
+</footer>
+
+<!-- Video modal -->
 <div class="vmodal" id="vmodal" aria-hidden="true">
   <div class="vm-backdrop" data-close></div>
   <div class="vm-box">
-    <button class="vm-close" data-close aria-label="Close video">✕</button>
+    <button class="vm-close mono" data-close aria-label="Close video">Close ✕</button>
     <video id="vmVideo" controls playsinline></video>
   </div>
 </div>
 
-<a class="wa-float" href="https://wa.me/919792910043" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
-  <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2s.2-1.1.2-1.2-.2-.2-.4-.3z"/></svg>
+<a class="wa-float" href="https://wa.me/9197929910043" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+  <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2s.2-1.1.2-1.2-.2-.2-.4-.3z"/></svg>
 </a>
 
-<footer>MOTIONDROID — VIDEO EDITOR &nbsp;·&nbsp; BASED IN PALGHAR, MAHARASHTRA</footer>
-
+<div class="grain" aria-hidden="true"></div>
 <script src="script.js" defer></script>
-
 </body>
 </html>
